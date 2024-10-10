@@ -1,0 +1,3 @@
+mutation removeCart($id: String, $expired: Boolean) {
+  removeCart(id: $id, expired: $expired)
+}

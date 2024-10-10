@@ -1,0 +1,6 @@
+{
+  "admin.app.example": {
+    "component": "AdminQuotationRender",
+    "path": "/admin/app/cotacoes"
+  }
+}

@@ -1,0 +1,24 @@
+type Query {
+  getSetupConfig: GetSetupConfigResponse
+    @cacheControl(scope: PRIVATE, maxAge: SHORT)
+  getCarts(email: String): [CartResponse]
+    @cacheControl(scope: PRIVATE, maxAge: SHORT)
+  currentTime: String @cacheControl(scope: PRIVATE)
+  getCart(id: String): [CartResponse]
+    @cacheControl(scope: PRIVATE, maxAge: SHORT)
+}
+
+type Mutation {
+  orderQuote(cart: Cart): String @cacheControl(scope: PRIVATE)
+  getCarts(email: String): [CartResponse] @cacheControl(scope: PRIVATE)
+  getCart(id: String): CartResponse @cacheControl(scope: PRIVATE)
+  removeCart(id: String, expired: Boolean): Boolean!
+    @cacheControl(scope: PRIVATE)
+  useCart(
+    orderFormId: String
+    items: [CartUseInfo]
+    userType: String
+    customData: CustomDataInput
+  ): String @cacheControl(scope: PRIVATE)
+  clearCart(orderFormId: String): String @cacheControl(scope: PRIVATE)
+}

@@ -1,0 +1,112 @@
+input CartItem {
+  name: String
+  skuName: String
+  refId: String
+  id: String
+  productId: String
+  imageUrl: String
+  listPrice: Float
+  price: Float
+  quantity: Int
+  sellingPrice: Float
+  seller: String
+}
+
+input Cart {
+  id: String
+  email: String
+  cartName: String
+  description: String
+  status: String
+  items: [CartItem]
+  creationDate: String
+  subtotal: Float
+  discounts: Int
+  shipping: Int
+  taxes: Int
+  total: Float
+  customData: CustomDataInput
+  address: Address
+  seller: String
+}
+
+type CartResponse {
+  email: String
+  cartName: String
+  description: String
+  status: String
+  items: [CartResponseItem]
+  creationDate: String
+  id: String
+  subtotal: Float
+  discounts: Int
+  taxes: Int
+  shipping: Int
+  total: Float
+  customData: CustomData
+  address: AddressResponse
+  seller: String
+}
+
+input CustomDataInput {
+  customApps: [CustomAppInput]
+}
+type CustomData {
+  customApps: [CustomApp]
+}
+
+scalar CustomFields
+type CustomApp {
+  fields: CustomFields
+  id: String
+  major: Int
+}
+
+input CustomAppInput {
+  fields: CustomFields
+  id: String
+  major: Int
+}
+
+type CartResponseItem {
+  name: String
+  skuName: String
+  id: String
+  refId: String
+  productId: String
+  imageUrl: String
+  listPrice: Float
+  price: Float
+  quantity: Int
+  sellingPrice: Float
+  seller: String
+}
+
+input CartUseInfo {
+  id: String
+  quantity: Int
+  sellingPrice: Int
+  seller: String
+}
+
+input Address {
+  city: String
+  complement: String
+  country: String
+  neighborhood: String
+  number: String
+  postalCode: String
+  state: String
+  street: String
+}
+
+type AddressResponse {
+  city: String
+  complement: String
+  country: String
+  neighborhood: String
+  number: String
+  postalCode: String
+  state: String
+  street: String
+}

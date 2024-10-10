@@ -1,0 +1,10 @@
+query getSetupConfig {
+  getSetupConfig {
+    adminSetup {
+      cartLifeSpan
+      storeLogoUrl
+      hasSchema
+      allowManualPrice
+    }
+  }
+}
