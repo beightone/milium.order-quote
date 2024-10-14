@@ -260,13 +260,13 @@ const QuoteCreate: StorefrontFunctionComponent<
   })
 
   const summary = [
-    {
-      label: translateMessage({
-        id: 'store/orderquote.summary.subtotal',
-      }),
-      value: <FormattedCurrency value={subtotal} />,
-      isLoading: false,
-    },
+    // {
+    //   label: translateMessage({
+    //     id: 'store/orderquote.summary.subtotal',
+    //   }),
+    //   value: <FormattedCurrency value={subtotal} />,
+    //   isLoading: false,
+    // },
     // {
     //   label: translateMessage({
     //     id: 'store/orderquote.summary.shipping',
